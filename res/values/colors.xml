@@ -1,8 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorPrimaryDark">#303135</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="backgroundDark">#202125</color>
-    <color name="bluish">#30a8e4</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#30a8e4</color>
+    <color name="red">#FF0000</color>
+
+    <color name="A">#F5A9A9</color>
+    <color name="B">#F5BCA9</color>
+    <color name="C">#F5D0A9</color>
+    <color name="D">#F3E2A9</color>
+    <color name="E">#F2F5A9</color>
+    <color name="F">#E1F5A9</color>
+    <color name="G">#D0F5A9</color>
+    <color name="H">#BCF5A9</color>
+    <color name="I">#A9F5A9</color>
+    <color name="J">#A9F5BC</color>
+    <color name="K">#A9F5D0</color>
+    <color name="L">#A9F5E1</color>
+    <color name="M">#A9F5F2</color>
+    <color name="N">#A9E2F3</color>
+    <color name="O">#A9D0F5</color>
+    <color name="P">#A9BCF5</color>
+    <color name="Q">#A9A9F5</color>
+    <color name="R">#BCA9F5</color>
+    <color name="S">#D0A9F5</color>
+    <color name="T">#E2A9F3</color>
+    <color name="U">#F5A9F2</color>
+    <color name="V">#F5A9E1</color>
+    <color name="W">#F5A9D0</color>
+    <color name="X">#F5A9BC</color>
+    <color name="Y">#E6E6E6</color>
+
 </resources>

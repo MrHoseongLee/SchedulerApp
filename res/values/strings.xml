@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Scheduler</string>
+    <string name="date">%d/%d/%d</string>
+    <string name="input_date">Date</string>
+    <string name="save_button">Save</string>
+    <string name="manage_classes">Manage Classes</string>
+    <string name="manage_assignments">Manage Assignments</string>
+
+    <string name="input_assignment_name">Assignment</string>
+    <string name="input_meeting_name">Meeting Name</string>
+    <string name="input_class_name">Class Name</string>
+
+    <string name="pick_color">Pick Color</string>
+
+    <string name="doubleClass">연강</string>
+
+    <string name="startTime">Starting Time</string>
+    <string name="endTime">Ending Time</string>
+    <string name="dueTime">Due Time</string>
+    <string name="estimatedTime">Estimated Time</string>
+
+    <string name="Monday">Mon</string>
+    <string name="Tuesday">Tue</string>
+    <string name="Wednesday">Wed</string>
+    <string name="Thursday">Thu</string>
+    <string name="Friday">Fri</string>
+
 </resources>

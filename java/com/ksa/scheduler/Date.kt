@@ -1,13 +1,11 @@
 package com.ksa.scheduler
 
+import java.util.*
+
 data class Date (val year: Int, val month: Int, val day: Int) {
 
-    companion object {
-        val daysInMonth = arrayOf(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
-    }
-
     override fun hashCode(): Int {
-        return year * 1000 + month * 100 + day
+        return year * 10000 + month * 100 + day
     }
 
     override fun equals(other: Any?): Boolean {
@@ -21,46 +19,43 @@ data class Date (val year: Int, val month: Int, val day: Int) {
     }
 
     override fun toString(): String {
-        return "${year}.${month}.${day}"
+        return "${year}/${month}/${day}"
     }
 
     operator fun plus(daysToAdd: Int): Date {
-        if(daysToAdd < 0) {
-            return minus(-daysToAdd)
-        }
-        var newDay: Int = day + daysToAdd
-        var newMonth: Int = month
-        var newYear: Int = year
-        while(newDay > daysInMonth[(newMonth - 1).rem(12)]) {
-            newDay -= daysInMonth[(newMonth - 1).rem(12)]
-            ++newMonth
-        }
-        while(newMonth > 12) {
-            newMonth -= 12
-            ++newYear
-        }
+        val currentCalendar = Calendar.getInstance()
+        currentCalendar.set(year, month - 1, day)
+        currentCalendar.add(Calendar.DATE, daysToAdd)
+        val newYear = currentCalendar.get(Calendar.YEAR)
+        val newMonth = currentCalendar.get(Calendar.MONTH) + 1
+        val newDay = currentCalendar.get(Calendar.DAY_OF_MONTH)
         return Date(newYear, newMonth, newDay)
     }
 
     operator fun minus(daysToSubtract: Int): Date {
-        if(daysToSubtract < 0) {
-            return plus(-daysToSubtract)
-        }
-        var newDay: Int = day - daysToSubtract
-        var newMonth: Int = month
-        var newYear: Int = year
-        while(newDay <= 0) {
-            newDay += when (newMonth < 2){
-                true -> daysInMonth[newMonth + 10]
-                false -> daysInMonth[newMonth -2]
-            }
-            --newMonth
-        }
-        while(newMonth <= 0) {
-            newMonth += 12
-            --newYear
-        }
+        val currentCalendar = Calendar.getInstance()
+        currentCalendar.set(year, month - 1, day)
+        currentCalendar.add(Calendar.DATE, -daysToSubtract)
+        val newYear = currentCalendar.get(Calendar.YEAR)
+        val newMonth = currentCalendar.get(Calendar.MONTH) + 1
+        val newDay = currentCalendar.get(Calendar.DAY_OF_MONTH)
         return Date(newYear, newMonth, newDay)
+    }
+
+    operator fun compareTo (other: Date): Int {
+        val thisCompareSize  = this.year * 10000 + this.month * 100 + this.day
+        val otherCompareSize = other.year * 10000 + other.month * 100 + other.day
+        return when {
+            thisCompareSize > otherCompareSize ->  1
+            thisCompareSize < otherCompareSize -> -1
+            else -> 0
+        }
+    }
+
+    fun getDayOfWeek(): Int {
+        val currentCalendar = Calendar.getInstance()
+        currentCalendar.set(year, month-1, day)
+        return currentCalendar.get(Calendar.DAY_OF_WEEK) - 1
     }
 
 }

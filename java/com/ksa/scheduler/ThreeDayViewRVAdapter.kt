@@ -1,4 +1,5 @@
 package com.ksa.scheduler
+/*
 
 import android.content.res.Resources
 import android.view.View
@@ -11,9 +12,9 @@ import kotlinx.android.synthetic.main.day_item.view.*
 
 class ThreeDayViewRVAdapter : RecyclerView.Adapter<ThreeDayViewRVAdapter.Holder>() {
 
-    private var tasks: HashMap<Date, ArrayList<Task>> = HashMap()
-    private var time: Int = 0
-    private var startTime: Int = 0
+    private val tasks: HashMap<Date, ArrayList<Assignment>> = MainActivity.dataManager.assignments
+    private val time: Int = MainActivity.dataManager.totalTimeInDay()
+    private val startTime: Int = MainActivity.dataManager.startTime.hour
     private val xdpi: Float = MainActivity.appContext.resources.displayMetrics.xdpi
     private val width: Int = Resources.getSystem().displayMetrics.widthPixels / 3
 
@@ -24,8 +25,9 @@ class ThreeDayViewRVAdapter : RecyclerView.Adapter<ThreeDayViewRVAdapter.Holder>
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(viewGroup.context)
             .inflate(R.layout.day_item, viewGroup, false)
+        // view.translationY = MainActivity.statusBarHeight.toFloat()
         view.layoutParams.width = width
-        view.layoutParams.height = (8 * time * xdpi / 25.4f).toInt()
+        view.layoutParams.height = (8 * time * xdpi / 25.4f).toInt() + MainActivity.navigationBarHeight
         return Holder(view)
     }
 
@@ -53,11 +55,5 @@ class ThreeDayViewRVAdapter : RecyclerView.Adapter<ThreeDayViewRVAdapter.Holder>
         }
     }
 
-    fun loadData() {
-        val data: Data = DataManager.loadData()
-        tasks = data.tasks
-        time = (data.endTime - data.startTime).hour
-        startTime = data.startTime.hour
-    }
-
 }
+ */
