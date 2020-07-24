@@ -10,6 +10,7 @@
 * Pick one of 25 colors to represent a class, meeting, or assignment
 
 ## Demo
+[![](http://img.youtube.com/vi/Feewl3P1FlM/0.jpg)](http://www.youtube.com/watch?v=Feewl3P1FlM "Demo")
 
 ## Installation
 
